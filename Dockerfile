@@ -1,8 +1,8 @@
-FROM debian:stretch
+FROM debian:bullseye
 MAINTAINER Anders Åslund <anders.aslund@teknoir.se>
 
-RUN apt-get update && apt-get -y upgrade && \
-    apt-get install -y wget libpcre3-dev build-essential libssl-dev zlib1g-dev && \
+RUN apt update && apt -y upgrade && \
+    apt install -y wget libpcre3-dev build-essential libssl-dev zlib1g-dev && \
     rm -rf /var/lib/apt/lists/*
 
 WORKDIR /opt
@@ -25,6 +25,6 @@ ADD zero_downtime_reload.sh /opt/nginx/sbin/zero_downtime_reload.sh
 
 WORKDIR /
 
-EXPOSE 80 443
+#EXPOSE 80 443
 
 CMD ["/opt/nginx/sbin/nginx", "-g", "daemon off;"]
