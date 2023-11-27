@@ -1,3 +1,12 @@
+## This fork has fully updated (as of 11/23) nginx and debian image.
+
+Clone the repo, edit docker-compose.yml and nginx.conf to your requirements, then docker compose up -d 
+
+I have included a sample nginx conf, for tcp connections.
+
+Original readme ⬇⬇
+
+-----------------------------------------
 # Nginx Stream Dockerfile
 Nginx compiled with --with-stream to be able to create proxies or loadbalancers for non http protocols.
 
